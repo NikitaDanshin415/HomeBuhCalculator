@@ -1,0 +1,225 @@
+body{
+    margin: 0px;
+    padding:0px;
+    font-family: "Goudy Bookletter 1911", sans-serif;
+}
+
+.wrapper{
+    width:1400px;
+    margin:auto;
+    background:rgb(255, 214, 167);
+}
+
+.main_balance{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;   
+}
+
+.main_balance_item{
+    padding:20px 70px;
+    width:33.3%;
+    cursor: pointer;
+    transition: background-color 0.5s linear;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.monthStart{
+    text-align: left;
+    position: relative;
+}
+
+.currentBalance{
+    text-align: center;
+    position: relative;
+}
+.monthEnd{
+    text-align: right;
+    position: relative;
+}
+.main_balance_item:hover{
+    background-color:rgb(248, 192, 128); 
+}
+
+.item_title{
+    text-transform:  uppercase;
+    padding-bottom: 10px;
+    position: relative;
+}
+
+.item_balance{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    width:100px;
+    margin:0 auto;
+}
+.monthStart .item_balance{
+    position: absolute;
+    left:0;
+}
+.monthEnd .item_balance{
+    position: absolute;
+    right:0;
+}
+
+.monthStart .item_title:after {
+	display: block;
+	position: absolute;
+	left: 0; 
+	width: 0;
+	height: 1px; 
+	background-color: #fff; 
+	content: "";
+	transition: width 0.7s ease-out; 
+}
+
+.currentBalance .item_title:after {
+    background-color: #fff;
+    display: block;
+    content: "";
+    height: 1px;
+    width: 0%;
+    left:50%;
+    position:absolute;
+    -webkit-transition: width .7s ease-in-out;
+    -moz--transition: width .7s ease-in-out;
+    transition: width .7s ease-in-out;
+    -webkit-transform:translateX(-50%);
+    -moz-transform:translateX(-50%);
+    transform:translateX(-50%); 
+}
+
+.monthEnd .item_title:after {
+	display: block;
+	position: absolute;
+	right: 0; 
+	width: 0;
+	height: 1px; 
+	background-color: #fff; 
+	content: "";
+	transition: width 0.7s ease-out; 
+}
+
+.main_balance_item:hover .item_title:after{
+	width: 100%; 
+}
+
+.main_category{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color:#fff;
+}
+
+.category_list{
+    padding:20px 0px 20px 70px;
+    width:65%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.category_list_item{
+    padding: 10px 0px;
+    transition: 1s all;
+    cursor:default;
+}
+
+.category_list_item:hover{
+    background-color:rgb(248, 192, 128);    
+}
+
+.price{
+    color:red
+}
+
+.product{
+    color:rgb(0, 174, 255);
+}
+
+.middle_exeption{
+    padding: 20px 70px 20px 0px;
+    width:35%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.middle_exeption_title{
+    text-align: center;
+}
+
+.middle_exeption_price{
+    font-size: 60px;
+    text-align: center;
+    font-weight: bold;
+    color:green;
+}
+
+
+
+
+
+
+
+
+@media screen and (max-width:1400px){
+    .wrapper{
+        width:100%;
+    }
+}
+
+@media (max-width:875px){
+    .main_balance,
+    .main_category{
+        flex-direction: column;
+    }
+
+    .main_balance_item,
+    .category_list,
+    .middle_exeption{
+        width: auto;
+        text-align: center;
+    }
+
+    .monthStart{
+        text-align: center;
+    }
+    .currentBalance{
+        text-align: center;
+    }
+    .monthEnd{
+        text-align: center;
+    }
+    
+    .monthEnd .item_title:after,
+    .monthStart .item_title:after  {
+        background-color: #fff;
+        display: block;
+        content: "";
+        height: 1px;
+        width: 0%;
+        left:50%;
+        position:absolute;
+        -webkit-transition: width .7s ease-in-out;
+        -moz--transition: width .7s ease-in-out;
+        transition: width .7s ease-in-out;
+        -webkit-transform:translateX(-50%);
+        -moz-transform:translateX(-50%);
+        transform:translateX(-50%); 
+    }
+
+    .monthStart .item_balance, 
+    .monthEnd .item_balance{
+        position: relative;
+        right:auto;
+        left:auto;
+    }  
+
+    .middle_exeption{
+        padding: 20px 70px 20px 70px;
+    }
+    .category_list{
+        padding:20px 70px 20px 70px;
+    }
+}

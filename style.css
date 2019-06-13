@@ -1,7 +1,7 @@
 body{
     margin: 0px;
     padding:0px;
-    font-family: "Goudy Bookletter 1911", sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .wrapper{
@@ -121,14 +121,23 @@ body{
 }
 
 .category_list_item{
-    padding: 10px 0px;
-    transition: 1s all;
+    padding: 10px 10px;
+    transition:all 0.4s ease-in;
     cursor:default;
 }
 
 .category_list_item:hover{
     background-color:rgb(248, 192, 128);    
 }
+
+.category_list_add{
+    background: rgb(248, 192, 128);
+    border: 0;
+    height: 30px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
 
 .price{
     color:red
@@ -156,10 +165,40 @@ body{
     color:green;
 }
 
+.category_list_title{
+    margin: 0px 0px 10px 0px;
+    font-size: 26px; 
+    text-transform: uppercase;
+    cursor:default;
+}
+
+.category_list_add{
+    width:200px;
+    text-align: center;
+    padding-top: 7px;
+    margin-top: 7px;
+    position: relative;
+}
+
+.add_btn:after {
+	display: block;
+	position: absolute;
+	left: 0; 
+	width: 0;
+	height: 1px; 
+	background-color: #fff; 
+	content: "";
+    transition: width 0.7s ease-out; 
+    margin-left:10%;
+    margin-right:10%;
+}
 
 
-
-
+.category_list_add:hover .add_btn:after{
+    margin-left:10%;
+    margin-right:10%;
+	width: 80%; 
+}
 
 
 
@@ -222,4 +261,10 @@ body{
     .category_list{
         padding:20px 70px 20px 70px;
     }
+
+    .category_list_add{
+        margin:auto;
+    }
 }
+
+
